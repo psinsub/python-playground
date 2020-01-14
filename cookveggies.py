@@ -18,16 +18,12 @@ with open('vegetables.csv', 'r') as f:
     rows = list(reader)
     rows = [dict(row) for row in rows] # Convert OrderedDict to regular dict
 
+#print the variable vegetables
 
-#write the csv file
+print(vegetables)
 
-with open('vegetables.csv', 'w') as f:
-    writer = csv.writer(f)
-    writer.writerow(['name', 'color'])
-    
-    for veg in vegetables:
-    	veg_name = veg["name"]
-    	veg_color = veg["color"]
-    	row = [veg_name, veg_color]
-    	writer.writerow(row)
-   
+#Write vegetables as a JSON file called vegetables.json
+import json
+
+with open('vegetables.json', 'w') as f:
+    json.dump(vegetables, f, indent=4)
