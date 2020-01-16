@@ -28,20 +28,12 @@ with open('greenveggies.json', 'w') as f:
     json.dump(green_veg, f, indent=4)
 
 #bonus
-#Reads superheroes.json (in this folder)
+#Reads json file 
 import json
 
 with open('greenveggies.json', 'r') as f:
 	green_vegetables = json.load(f)
 
-#read in the csv file
-
-import csv
-
-with open('green_vegetables.csv', 'r') as f:
-	reader = csv.DictReader(f)
-	rows = list(reader)
-	rows = [dict(row) for row in rows] # Convert OrderedDict to regular dict
 
 #write the csv file
 
